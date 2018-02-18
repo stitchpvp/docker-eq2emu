@@ -1,0 +1,14 @@
+version: '3'
+services:
+  world:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "9000:9000/udp"
+    volumes:
+      - .:/app
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: eq2world
