@@ -3,6 +3,7 @@ rm -rf /release/*
 
 ln -s /world/source/WorldServer/eq2world /release/eq2world
 ln -s /app/logs /release/logs
+ln -s /app/scripts/* /release
 cp -rs /app/structs/*.xml /release
 cp -rs /app/config/* /release
 

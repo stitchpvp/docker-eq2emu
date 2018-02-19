@@ -1,2 +1,4 @@
 *.log
 LoginServer.ini
+scripts/*
+!scripts/.keep
