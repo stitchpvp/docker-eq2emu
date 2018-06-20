@@ -7,6 +7,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN git clone https://github.com/stitchpvp/world && \
   cd world/source/WorldServer && \
+  git checkout new_beginnings && \
   make
 
 VOLUME /app
