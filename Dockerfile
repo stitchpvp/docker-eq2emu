@@ -7,10 +7,17 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN git clone https://github.com/stitchpvp/world && \
   cd world/source/WorldServer && \
-  git checkout new_beginnings && \
+  git checkout ini-to-env && \
   make
 
-VOLUME /app
+RUN mkdir /app
+WORKDIR /app
+
+RUN mkdir structs
+COPY structs/*.xml structs/
+
+RUN mkdir config
+COPY config/*.xml config/
 
 WORKDIR /release
 

@@ -1,13 +1,15 @@
 version: '3'
 services:
   world:
-    build: .
+    image: stitchpvp/world:7
     depends_on:
       - db
     ports:
       - "9000:9000/udp"
-    volumes:
-      - .:/app
+    environment:
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: eq2world
+      DATABASE_HOST: db
   db:
     image: mariadb
     environment:
